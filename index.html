@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Psiware Store</title>
+    <title>Psiware VueJS E-commerce Example</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
 </head>
@@ -12,10 +12,10 @@
         <div class="container">
             <br>
             <nav id="top-navigation" class="well well-sm flex flex-row align-center">
-                <a href="#" @click="isShowingCart = false"><strong>Psiware Store</strong></a>
+                <a href="#" @click.prevent="isShowingCart = false"><strong>Psiware Store.</strong></a>
 
                 <div class="text-right pull-right cart-info">
-                    <span class="stats"> {{ cart.items.length }} <template v-if="cart.items.length == 1">item </template> <template v-else>items </template>in cart, totalling {{ cartTotal | currency }}</span>
+                    <span class="stats">{{ cart.items.length }} <template v-if="cart.items.length == 1">item</template><template v-else>items</template> in cart, totalling {{ cartTotal | currency }}</span>
                     <button class="btn btn-primary" @click="isShowingCart = true">View Cart</button>
                 </div>
             </nav>
@@ -23,29 +23,7 @@
             <div v-if="!isShowingCart" id="products" class="row list-group">
                 <div v-for="product in products" class="item col-xs-4">
                     <div class="thumbnail">
-                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 399.7 396" style="enable-background:new 0 0 399.7 396;" xml:space="preserve">
-                            <style type="text/css">
-                                .st0{clip-path:url(#SVGID_2_);fill:#888B8F;}
-                                .st1{clip-path:url(#SVGID_2_);fill:#00C9B2;}
-                            </style>
-                            <g>
-                                <defs>
-                                    <rect id="SVGID_1_" x="5.8" y="6.7" width="389.1" height="386.8"/>
-                                </defs>
-                                <clipPath id="SVGID_2_">
-                                    <use xlink:href="#SVGID_1_" style="overflow:visible;"/>
-                                </clipPath>
-                                <path class="st0" d="M366,348.5l-14.4,0.2c0.7-6,7.4-12.3,17.7-12.3c9.3,0,14.1,3.8,14.9,8.5C383.4,347.5,379.7,348.3,366,348.5    M394.8,343.5c0-0.1,0-0.2,0-0.3c0-9.6-11.8-16.7-24.4-16.7c-17.2,0-30.2,10.3-30.2,25.9c0,0,0,0.1,0,0.1c0,0.1,0,0.2,0,0.2   c0,0,0,0.1,0,0.1c0,0.1,0,0.2,0,0.2c0,0,0,0.1,0,0.1c0,0.1,0,0.2,0,0.2c0,0,0,0.1,0,0.1c0,0.1,0,0.2,0,0.2c0,0,0,0.1,0,0.1   c0,0.1,0,0.2,0,0.2c0,0,0,0.1,0,0.1c0,0.1,0,0.2,0,0.2c0,0,0,0.1,0,0.1c0,0.1,0,0.2,0,0.2c0,13.8,12.6,24,30.3,24   c14.5,0,21.7-3.9,21.7-8.9v-0.4v-0.4v-0.4v-0.4v-0.4v-0.4v-0.4v-1.1V366v-0.4v-0.4v-0.4v-0.4v-0.4v-0.4h-0.6   c-3.6,2.6-9.7,4.9-19.6,4.9c-10.8,0-17.9-4.5-20.1-11.2h15.4c22.1,0,27.4-3.5,27.4-12c0,0,0,0,0-0.1c0-0.1,0-0.2,0-0.3   c0,0,0,0,0-0.1c0-0.1,0-0.2,0-0.3c0,0,0-0.1,0-0.1c0-0.1,0-0.2,0-0.3c0,0,0,0,0-0.1c0-0.1,0-0.2,0-0.3c0,0,0,0,0-0.1   c0-0.1,0-0.2,0-0.3c0,0,0,0,0-0.1C394.8,343.7,394.8,343.7,394.8,343.5C394.8,343.5,394.8,343.5,394.8,343.5"/>
-                                <path class="st0" d="M98.9,347.4c-12.4-2-15.6-3.4-16.3-6.2c0.9-3.7,6.5-5.8,15.4-5.8c9.2,0,15.1,1.7,19.6,5.6   c0.1,0.1,0.3,0.2,0.4,0.2h0.5c0.4,0,0.7-0.3,0.7-0.7v-0.4v-0.4v-0.4V339v-0.4v-0.4V338v-0.4v-0.4v-0.4v-0.4v-0.4v-0.4v-0.4V335   c0-4.8-7.1-9.7-20.7-9.7c-16.3,0-27.2,6.2-27.2,15.4c0,0.1,0,0.1,0,0.2c0,0.1,0,0.1,0,0.2c0,0.1,0,0.1,0,0.2c0,0.1,0,0.1,0,0.2   c0,0.1,0,0.1,0,0.2c0,0.1,0,0.1,0,0.2c0,0.1,0,0.1,0,0.2c0,0.1,0,0.1,0,0.2c0,0.1,0,0.1,0,0.2c0,0.1,0,0.1,0,0.2c0,0.1,0,0.1,0,0.2   c0,0.1,0,0.1,0,0.2c0,0.1,0,0.1,0,0.2c0,0.1,0,0.1,0,0.2c0,8,8.4,10.9,20.9,12.8c13.5,2.1,17,3.9,17.6,7.3c-0.5,3-3.3,6-15.1,6   c-8.5,0-16.5-2.5-20.7-6.5c-0.1-0.1-0.3-0.2-0.4-0.2h-0.5c-0.4,0-0.7,0.3-0.7,0.7v0.4v0.4v0.4v0.4v0.4v0.4v0.4v0.7v0.4v0.4v0.4v0.4   v0.4v0.4v0.4c0,6.1,11.4,10.3,21.6,10.3c19.9,0,27-8,27-15.5c0,0,0-0.1,0-0.1c0-0.1,0-0.1,0-0.2c0,0,0-0.1,0-0.1c0-0.1,0-0.1,0-0.2   c0,0,0-0.1,0-0.1c0-0.1,0-0.1,0-0.2c0,0,0-0.1,0-0.1c0-0.1,0-0.1,0-0.2c0,0,0-0.1,0-0.1c0-0.1,0-0.1,0-0.2c0,0,0-0.1,0-0.1   c0-0.1,0-0.1,0-0.2c0,0,0-0.1,0-0.1c0-0.1,0-0.1,0-0.2C120.9,352.2,107.1,348.7,98.9,347.4"/>
-                                <path class="st0" d="M136.7,326h-4.5c-0.4,0-0.7,0.3-0.7,0.7v0.4v0.4v0.4v0.4v0.4v0.4v0.4v41.5v0.4v0.4v0.4v0.4v0.4v0.4v0.4   c0,3.5,2.5,5.5,6.8,5.5h3.4c0.4,0,0.7-0.3,0.7-0.7v-0.4v-0.4v-0.4v-0.4v-0.4v-0.4v-0.4v-43v-0.4v-0.4v-0.4v-0.4v-0.4v-0.4V330   C142.4,327.6,139.5,326,136.7,326"/>
-                                <path class="st0" d="M236.5,326h-4.8c-0.3,0-0.6,0.2-0.6,0.6c-1.7,10.9-7.5,25.9-14.8,38.4c-6-9.8-11.2-22.7-13.8-31.4   c-1.4-4.8-3.1-6-8.1-6h-2.7c-0.3,0-0.6,0.2-0.6,0.5c0,0-0.7,2.6-1,3.6c-3.5,11.2-8.7,23.5-14,33.2c-7.5-12.6-11.6-25.5-13.7-34.1   c-0.5-2.3-2.8-4.8-6.5-4.8h-4.9c-0.2,0-0.4,0.1-0.5,0.2c-0.1,0.2-0.2,0.4-0.1,0.5c0,0,0,0,0,0.1c0,0.1,0,0.2,0,0.3c0,0,0,0,0,0.1   c0,0.1,0,0.2,0,0.3c0,0,0,0,0,0.1c0,0.1,0,0.2,0,0.3c0,0,0,0,0,0.1c0,0.1,0,0.2,0,0.3c0,0,0,0,0,0.1c0,0.1,0,0.2,0,0.3   c0,0,0,0,0,0.1c0,0.1,0,0.2,0,0.3c0,0,0,0,0,0.1c0,0.1,0,0.2,0,0.3c3.7,17.8,10.4,33.2,20.6,47.1c0.8,1,3,2.6,5.8,2.6h2.1   c0.2,0,0.4-0.1,0.5-0.2c4.6-5.6,12.2-20.2,16.6-33.8c4,12.9,10.5,25,15.5,31.5c0.6,0.8,2.3,2.5,4.9,2.5h2.4c0.2,0,0.4-0.1,0.5-0.3   c9.6-13,17.4-28.4,21.2-42.4c0.1-0.4,0.2-0.7,0.3-1.1c0.3-1,0.5-1.9,0.5-2.9c0,0,0-0.1,0-0.1c0-0.1,0-0.1,0-0.2c0,0,0-0.1,0-0.1   c0-0.1,0-0.2,0-0.2c0,0,0-0.1,0-0.1c0-0.1,0-0.1,0-0.2c0,0,0-0.1,0-0.1c0-0.1,0-0.1,0-0.2c0,0,0-0.1,0-0.1c0-0.1,0-0.2,0-0.2   c0,0,0-0.1,0-0.1c0-0.1,0-0.1,0-0.2c0,0,0-0.1,0-0.1c0-0.1,0-0.2,0-0.2C241,327.6,239.1,326,236.5,326"/>
-                                <path class="st0" d="M270.4,368.8c-7.6,0-12.8-2.7-13.7-6.4c1-4.5,6.9-6.9,18.7-6.9h8.8v3.5C284.2,365.9,280.2,368.8,270.4,368.8    M270,326.5c-14.5,0-22.2,5.8-22.2,10.2v0.4v0.4v0.4v0.4v0.4v0.4v0.4v1.5v0.4v0.4v0.4v0.4v0.4v0.4v0.4h0.6   c3.7-3.9,10.9-6.6,20.5-6.6c10.4,0,15.1,2.8,15.2,9.6h-8.7c-19.3,0-30.1,5.7-30.1,16c0,0.1,0,0.1,0,0.2c0,0.1,0,0.1,0,0.2   c0,0.1,0,0.1,0,0.2c0,0.1,0,0.1,0,0.2c0,0.1,0,0.1,0,0.2c0,0.1,0,0.1,0,0.2c0,0.1,0,0.1,0,0.2c0,0.1,0,0.1,0,0.2c0,0.1,0,0.1,0,0.2   c0,0.1,0,0.1,0,0.2c0,0.1,0,0.1,0,0.2c0,0.1,0,0.1,0,0.2c0,0.1,0,0.1,0,0.2c0,0.1,0,0.1,0,0.2c0,8.5,11.5,14.2,24.6,14.2   c18.1,0,25.1-7,25.1-16.7v-0.4v-0.4v-0.4v-0.4v-0.4V360v-0.4V347v-0.4v-0.4V346v-0.4v-0.4v-0.4v-0.4   C295.1,332.9,286.4,326.5,270,326.5"/>
-                                <path class="st0" d="M326.2,327.5c-12.6,0-21.3,7.1-21.3,20.4v0.4v0.4v0.4v0.4v0.4v0.4v0.4V370v0.4v0.4v0.4v0.4v0.4v0.4v0.4   c0,3.1,2.3,5.5,6.3,5.5h4.7v-0.4v-0.4v-0.4v-0.4v-0.4v-0.4v-0.4V351c0-10.3,3.3-13.4,11.8-13.4c4.4,0,7.9,1.1,9.9,2.4h0.6v-0.4   v-0.4V339v-0.4v-0.4v-0.4v-0.4v-1.5v-0.4v-0.4V335v-0.4v-0.4v-0.4v-0.4C338.3,330.3,335,327.5,326.2,327.5"/>
-                                <path class="st0" d="M34.3,335.8c10.9,0,18.6,5.1,19.1,17.6c-0.4,9.9-6.6,15.3-16.6,15.3c-11.6,0-19.5-5.6-20-17.5   C17.2,341.8,23.4,335.8,34.3,335.8 M64.5,350c0,0,0-0.1,0-0.1c0-14.5-13.5-24.3-27.8-24.3c-20.7,0-31,10.2-31,26.8v0.2v0.2v0.2v0.2   v0.2v0.2v0.2v0.2v0.2v0.2v0.2v30.1v0.2v0.2v0.2v0.2v0.2v0.2v0.2v0.2v0.2v0.2v0.2c0,4.6,2.5,6.3,7.1,6.3h4v-0.2V393v-0.2v-0.2v-0.2   v-0.2V392v-0.2v-0.2v-0.2v-0.2v-21c3.4,5.1,11.2,8.6,18.6,8.6c16.3,0,29-9.8,29-26.6c0,0,0-0.1,0-0.1c0,0,0-0.1,0-0.1   c0,0,0-0.1,0-0.1c0,0,0-0.1,0-0.1c0,0,0-0.1,0-0.1c0,0,0-0.1,0-0.1c0,0,0-0.1,0-0.1c0,0,0-0.1,0-0.1c0,0,0-0.1,0-0.1   c0,0,0-0.1,0-0.1c0,0,0-0.1,0-0.1c0,0,0-0.1,0-0.1c0,0,0-0.1,0-0.1c0,0,0-0.1,0-0.1c0,0,0-0.1,0-0.1c0,0,0-0.1,0-0.1   c0,0,0-0.1,0-0.1c0,0,0-0.1,0-0.1c0,0,0-0.1,0-0.1C64.5,350.2,64.5,350.1,64.5,350C64.5,350.1,64.5,350,64.5,350"/>
-                                <path class="st1" d="M137.9,260.9c0,6.5,5.3,11.8,11.8,11.8c6.5,0,11.8-5.3,11.8-11.8c0-6.5-5.3-11.8-11.8-11.8   C143.2,249.1,137.9,254.4,137.9,260.9 M165.5,137.1c-16,0-28.9,12.9-28.9,28.9c0,16,12.9,28.9,28.9,28.9c16,0,28.9-12.9,28.9-28.9   C194.4,150,181.4,137.1,165.5,137.1 M316.1,25.7c-14.6-14-36.7-20.1-62.2-18.9l0,0.1c-5.8,0.3-11.4,1-16.7,2.1   c-8.7,0.9-17.8,2.6-27.3,5.3c-31.5,9.2-49.2,24.8-44,44.3c3.7,14.1,18.5,19.5,34.9,24.4c14.8,4.4,31,8.5,41.5,17.8   c0.9,0.9,1.9,1.8,2.7,2.8c22.9,25,11.6,66.4-25.3,92.4c-36.9,26-85.4,26.8-108.3,1.8c-2.5-2.7-4.6-5.7-6.3-8.8   c-0.2-0.4-0.4-0.8-0.6-1.2c-13.1-26.7-45.3-14.4-34.3,9.9c0.5,1.1,1.1,2.1,1.7,3c2.5,4.4,5.6,8.5,9.5,12.2   c35.9,34.6,106.2,23.2,148.6-3.5C332.3,144.9,352,60.3,316.1,25.7"/>
-                            </g>
-                            </svg>
-                        <!-- <img class="group list-group-image" src="http://placehold.it/400x250/000/fff"> -->
+                        <img class="group list-group-image" src="./237.png">
                         <div class="caption">
                             <h4 class="group inner list-group-item-heading">{{ product.name }}</h4>
                             <p class="group inner list-group-item-text">{{ product.description }}</p>
@@ -57,9 +35,10 @@
                                 </div>
 
                                 <div class="col-xs-8 flex flex-row align-center justify-right">
-                                    <div class="number-in-stock" :class="{ few: product.inStock < 10, none: product.inStock == 0 }">
-                                        {{ product.inStock }} in Stock
+                                    <div class="number-in-stock" :class="{ few: product.inStock < 10 && product.inStock > 0, none: product.inStock == 0 }">
+                                        {{ product.inStock }} in stock
                                     </div>
+
                                     <button class="btn btn-success" @click="addProductToCart(product)" :disabled="product.inStock == 0">Add to cart</button>
                                 </div>
                             </div>
@@ -67,17 +46,63 @@
                     </div>
                 </div>
             </div>
+
+            <div v-else>
+                <h1>Cart</h1>
+
+                <table v-if="cart.items.length > 0" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Product</th>
+                            <th>Quantity</th>
+                            <th>Price</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr v-for="item in cart.items">
+                            <td>{{ item.product.name }}</td>
+                            <td>{{ item.quantity }}</td>
+                            <td>{{ item.quantity * item.product.price | currency }}</td>
+                        </tr>
+
+                        <tr>
+                            <td class="text-right" colspan="2">
+                                <strong>Subtotal</strong>
+                            </td>
+
+                            <td>{{ cartTotal | currency }}</td>
+                        </tr>
+
+                        <tr>
+                            <td class="text-right" colspan="2">
+                                <strong>Taxes</strong>
+                            </td>
+
+                            <td>{{ taxAmount | currency }}</td>
+                        </tr>
+
+                        <tr>
+                            <td class="text-right" colspan="2">
+                                <strong>Grand total</strong>
+                            </td>
+
+                            <td>{{ cartTotal + taxAmount | currency }}</td>
+                        </tr>
+
+                        <tr>
+                            <td colspan="2"></td>
+                            <td><button class="btn btn-success">Checkout</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <p v-else>Your cart is currently empty.</p>
+            </div>
         </div>
     </div>
 
-    <div v-else>
-        <div class="container">
-            <h1>Cart</h1>
-                <p> The cart will be displayed here.</p>
-        </div>
-    </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14"></script>
     <script src="js/app.js"></script>
 </body>
 </html>
